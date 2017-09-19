@@ -3,6 +3,7 @@
 
 #include "writer.h"
 
+<<<<<<< HEAD
 using namespace  std;
 
 int main(){
@@ -25,4 +26,7 @@ int main(){
     qDebug()<<writer.create_string(id, app, stream, urls)<<endl;
     system("pause");
     return 0;
+=======
+
+>>>>>>> 90fb7f66ee2b9fb6b5e3d6f4092136d74b8505fa
 }
