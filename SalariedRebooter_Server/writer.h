@@ -2,7 +2,10 @@
 #define WRITER_H
 
 #include <QString>
-#include <QHash>
+#include <QMap>
+#include <QFile>
+
+#include "databaseconnector.h"
 
 class Writer{
 
@@ -24,9 +27,8 @@ public:
 public:
     Writer();
     QString create_string(QString id, QString app, QString stream, QString urls);
-    bool write_to_file(QString str);
-    int create_id(QString area, int last_number);
-    void init_area_code_table(QHash<QString, int> table);
+    bool write_to_file(QFile *file, QString path_file, QString str);
+    QString create_id(DatabaseConnector connector, QString new_id);
 
 };
 

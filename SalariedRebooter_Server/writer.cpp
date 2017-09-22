@@ -1,5 +1,4 @@
 #include <QString>
-#include <QFile>
 #include <QDebug>
 #include <QTextStream>
 
@@ -22,22 +21,28 @@ QString Writer::create_string(QString id, QString app, QString stream, QString u
     return string;
 }
 
-bool Writer::write_to_file(QString str){
-    QFile file;
-    file.setFileName("D:\\test\\test\\rules.conf");
-    file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text);
-    if(file.isOpen()){
+bool Writer::write_to_file(QFile *file, QString path_file, QString str){
+    file->setFileName(path_file);
+    file->open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text);
+    if(file->isOpen()){
         qDebug()<<"file is open!";
         QTextStream q_str;
-        q_str.setDevice(&file);
+        q_str.setDevice(file);
         q_str<<str<<endl;
-        file.close();
+        file->close();
         return true;
     }else{
         return false;
     }
 }
 
-int Writer::create_id(QString area, int last_number){}
-
-void Writer::init_area_code_table(QHash<QString, int> table){}
+QString Writer::create_id(QSqlQuery *query, DatabaseConnector connector, QString region_name, bool cam_type, QString new_id){
+    if(cam_type == false){
+        new_id = connector.get_regione_code(query, region_name) + "000"
+                + QString::number(connector.get_cams_count(query, region_name) + 1);
+    }else if(cam_type == true){
+        new_id = connector.get_regione_code(query, region_name) + "000"
+                + QString::number(connector.get_cams_count(query, region_name) + 1) + "1";
+    }
+    return new_id;
+}
