@@ -28,7 +28,7 @@ public:
     Writer();
     QString create_string(QString id, QString app, QString stream, QString urls);
     bool write_to_file(QFile *file, QString path_file, QString str);
-    QString create_id(DatabaseConnector connector, QString new_id);
+    QString create_id(QSqlQuery *query, DatabaseConnector connector, QString region_name, bool cam_type, QString new_id);
 
 };
 

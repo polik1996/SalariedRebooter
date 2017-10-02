@@ -36,13 +36,13 @@ bool Writer::write_to_file(QFile *file, QString path_file, QString str){
     }
 }
 
-QString Writer::create_id(QSqlQuery *query, DatabaseConnector connector, QString region_name, bool cam_type, QString new_id){
-    if(cam_type == false){
-        new_id = connector.get_regione_code(query, region_name) + "000"
-                + QString::number(connector.get_cams_count(query, region_name) + 1);
-    }else if(cam_type == true){
-        new_id = connector.get_regione_code(query, region_name) + "000"
-                + QString::number(connector.get_cams_count(query, region_name) + 1) + "1";
-    }
-    return new_id;
-}
+//QString Writer::create_id(QSqlQuery *query, DatabaseConnector connector, QString region_name, bool cam_type, QString new_id){
+//    if(cam_type == false){
+//        new_id = connector.get_regione_code(query, region_name) + "000"
+//                + QString::number(connector.get_cams_count(query, region_name) + 1);
+//    }else if(cam_type == true){
+//        new_id = connector.get_regione_code(query, region_name) + "000"
+//                + QString::number(connector.get_cams_count(query, region_name) + 1) + "1";
+//    }
+//    return new_id;
+//}

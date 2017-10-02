@@ -210,6 +210,7 @@ Makefile: ../SalariedRebooter_Server/SalariedRebooter_Server.pro C:/Qt/5.9.1/min
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/qt_config.prf \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/toolchain.prf \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/default_pre.prf \
@@ -231,6 +232,7 @@ Makefile: ../SalariedRebooter_Server/SalariedRebooter_Server.pro C:/Qt/5.9.1/min
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/yacc.prf \
 		C:/Qt/5.9.1/mingw53_32/mkspecs/features/lex.prf \
 		../SalariedRebooter_Server/SalariedRebooter_Server.pro \
+		C:/Qt/5.9.1/mingw53_32/lib/Qt5Sql.prl \
 		C:/Qt/5.9.1/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\SalariedRebooter_Server\SalariedRebooter_Server.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -382,6 +384,7 @@ C:/Qt/5.9.1/mingw53_32/mkspecs/features/qt_functions.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/qt_config.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/win32-g++/qmake.conf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/exclusive_builds.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/toolchain.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/default_pre.prf:
@@ -403,6 +406,7 @@ C:/Qt/5.9.1/mingw53_32/mkspecs/features/exceptions.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/5.9.1/mingw53_32/mkspecs/features/lex.prf:
 ../SalariedRebooter_Server/SalariedRebooter_Server.pro:
+C:/Qt/5.9.1/mingw53_32/lib/Qt5Sql.prl:
 C:/Qt/5.9.1/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\SalariedRebooter_Server\SalariedRebooter_Server.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
